@@ -8,7 +8,7 @@ from tkinter import messagebox, Tk
 from plyer import notification
 
 # Load the dataset
-file_path = r"C:\Users\nandi\Desktop\nandini\Program\HackThisFall\final_data.csv"
+file_path = r"HackThisFall\final_data.csv"
 data = pd.read_csv(file_path)
 
 # Define thresholds for emergency detection
@@ -58,7 +58,7 @@ async def send_sos_bluetooth(message="SOS ALERT: Emergency Detected!"):
             async with bleak.BleakClient(device.address) as client:
                 if client.is_connected:
                     print(f"Connected to {device.name}.")
-                    await client.write_gatt_char("43484152-2dab-3141-6972-6f6861424c45", message.encode())
+                    await client.write_gatt_char("API Key", message.encode())
                     print(f"Message sent to {device.name}.")
         except Exception as e:
             print(f"Failed to send SOS to {device.name}: {e}")

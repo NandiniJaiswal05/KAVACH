@@ -10,7 +10,7 @@ engine.setProperty('rate', 150)
 
 # Function to get weather data
 def get_weather():
-    api_key = "c55be3e11c0aedd5796e79116d447ac0"
+    api_key = "API Key"
     location = "Current_Location"  # You can replace this with dynamic location if available
     url = f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}&units=metric"
     response = requests.get(url).json()
